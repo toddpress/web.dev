@@ -16,7 +16,7 @@ The HTML parser processes markup sequentially, meaning that it is effectively pa
 
 CSS is a [render-blocking](/critical-rendering-path-render-blocking-css/) resource, as it blocks the browser from rendering any content until the [CSS Object Model (CSSOM)](https://developer.mozilla.org/docs/Web/API/CSS_Object_Model) is constructed. The browser blocks rendering to prevent a [Flash of Unstyled Content (FOUC)](https://en.wikipedia.org/wiki/Flash_of_unstyled_content).
 
-{% video '[learn-performance-css-fouc](https://youtube.com/shorts/pXfxXVpg4Qk?feature=share)' %}
+{% YouTube "pXfxXVpg4Qk" %}
 
 In the preceding video, there is a brief FOUC where you can see the page without any styling. Subsequently, all styles are applied once the page's CSS has loaded.
 
