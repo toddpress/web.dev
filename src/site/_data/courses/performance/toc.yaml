@@ -1,0 +1,7 @@
+- url: /learn/performance
+  sections:
+  - title: i18n.courses.loading_performance.title
+  - url: /learn/performance/html
+  - url: /learn/performance/the-head-element
+  - title: i18n.courses.media.title
+  - url: /learn/performance/images
