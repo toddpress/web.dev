@@ -144,7 +144,7 @@ On the downside, inlining a large amount of CSS will add more to the initial HTM
 
 #### CSS demos
 
-{% Glitch '[learn-performance-css](https://learn-performance-css.glitch.me/)' %}
+{% Glitch 'learn-performance-css' %}
 
 ### JavaScript
 
@@ -184,4 +184,4 @@ Similar to CSS, [minifying your JavaScript](https://developer.chrome.com/en/docs
 
 #### JavaScript demos
 
-{% Glitch '[learn-performance-javascript](https://learn-performance-javascript.glitch.me/)' %}
+{% Glitch 'learn-performance-javascript' %}

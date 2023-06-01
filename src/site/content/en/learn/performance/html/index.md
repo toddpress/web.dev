@@ -51,7 +51,7 @@ The downside with ETags or the `Last-Modified` header is that the browser still 
 The `Last-Modified` header works similarly by including a response header with the date and time when the resource was last updated.
 {% endAside %}
 
-{% Glitch '[learn-performance-caching](https://learn-performance-caching.glitch.me/)' %}
+{% Glitch 'learn-performance-caching' %}
 
 ### Server Response Times
 

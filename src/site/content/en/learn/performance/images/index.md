@@ -1,5 +1,5 @@
 ---
-title: The `<head>` element
+title: Optimizing images
 authors:
   - jlwagner
 description: TODO
@@ -214,7 +214,9 @@ When working with responsive images, you can find yourself with many different s
 While it may be tempting to have as many variations to deliver the best fit, every additional image variant comes at a cost and decreases the cache hit ratio. With only one variant, every user receives the same image, so it can be cached very efficiently. On the other hand, if there are many variations, each variant requires another cache entry. Server costs will increase and can degrade performance if the variant's cache entry has expired, and the image needs to be re-fetched from the origin server.
 
 Apart from this, the size of your HTML document grows with each variation. You could find yourself shipping multiple kilobytes of HTML for each image.
+
 #### `Accept` header
+
 The [`Accept`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept) HTTP request header informs the server which content types the user's browser understands. This information can be used by your server to serve the optimal image format without adding extra bytes to your HTML responses.
 
 ```js
@@ -253,4 +255,4 @@ The effect of the `decoding` attribute may only be notable on larger, high-resol
 
 ### Image demos
 
-{% Glitch '[learn-performance-images](https://learn-performance-images.glitch.me/)' %}
+{% Glitch 'learn-performance-images' %}
