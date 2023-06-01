@@ -1796,5 +1796,13 @@
   "vignesh": {
     "country": "US",
     "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8c6t6kea6QWzRJ1oEIal.jpg"
+  },
+  "imkevdev": {
+    "country": "MT",
+    "image": "image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/cXP5ZXxQp7ftwlgmeIv8.jpeg",
+    "linkedin": "https://www.linkedin.com/in/imkevdev/",
+    "homepage": "https://imkev.dev/",
+    "twitter": "imkevdev",
+    "github": "kevinfarrugia"
   }
 }

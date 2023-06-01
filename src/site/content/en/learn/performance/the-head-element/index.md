@@ -1,7 +1,7 @@
 ---
 title: The `<head>` element
 authors:
-  - jlwagner
+  - imkevdev
 description: TODO
 date: 2023-09-01
 tags:
