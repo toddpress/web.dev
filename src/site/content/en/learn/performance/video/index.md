@@ -2,7 +2,7 @@
 title: Video
 authors:
   - imkevdev
-description: TODO
+description: Video is a popular media type used often on web pages—but knowing how to use them is one aspect of performance you shouldn't overlook. In this module, you'll learn some key techniques for embedding videos such that your website stays fast.
 date: 2023-09-01
 tags:
   - performance
@@ -12,18 +12,18 @@ Videos are a popular media type used often on web pages. Before looking at some 
 
 ## Video source files
 
-When working with media files, the file you recognize on your operating system (`.mp4`, `.webm`, and so on) is called a _container_. A container contains one or more streams. In most cases, this would be the video and audio stream. You can compress each stream using a codec. For example, a `video.webm` could be a WebM container containing a video stream compressed using [_VP9_](https://en.wikipedia.org/wiki/VP9) and an audio stream compressed using [_Vorbis_](https://en.wikipedia.org/wiki/Vorbis). Understanding the difference between containers & codecs is helpful because it enables you to compress your media files using significantly less bandwidth.
+When working with media files, the file you recognize on your operating system (`.mp4`, `.webm`, and so on) is called a _container_. A container contains one or more streams. In most cases, this would be the video and audio stream. You can compress each stream using a codec. For example, a `video.webm` could be a WebM container containing a video stream compressed using [_VP9_](https://en.wikipedia.org/wiki/VP9) and an audio stream compressed using [_Vorbis_](https://en.wikipedia.org/wiki/Vorbis). Understanding the difference between containers and codecs is helpful because it enables you to compress your media files using significantly less bandwidth.
 
-One method to compress your videos involves using [FFmpeg](https://ffmpeg.org/):
+One method of compressing your videos involves using [FFmpeg](https://ffmpeg.org/):
 
 ```bash
-$ ffmpeg -i input.mov output.webm
+ffmpeg -i input.mov output.webm
 ```
 
 The above command takes the `input.mov` file and outputs an `output.webm` file using the default FFmpeg options. These will give you a smaller file that works in most modern browsers. Tweaking the FFmpeg options could help you reduce the file size even further. For example, if you are using a `<video>` element to replace a GIF, you should remove the audio track:
 
 ```bash
-$ ffmpeg -i input.mov -an output.webm
+ffmpeg -i input.mov -an output.webm
 ```
 
 {% Aside 'important' %}
