@@ -16,7 +16,7 @@ The request goes through several steps. Reducing the number of steps or the time
 For more information on how to optimize your website's TTFB, read the [optimize TTFB guide](/optimize-ttfb/).
 {% endAside %}
 
-### Minimize Redirects
+## Minimize Redirects
 
 When a resource is requested, the server may respond with a redirect, either with a permanent redirect (301 response) or a temporary one (302 response). Redirects will slow down page load speed because it requires the browser to make another HTTP request at the new location to retrieve the resource.
 
@@ -31,7 +31,7 @@ Cross-origin redirects are used by ads, URL-shortening services, and other third
 A common same-origin redirect pattern is to redirect users from a URL ending in a trailing slash to a non-trailing slash equivalent or vice-versa—for example, redirecting the user from `example.com/page/` to `example.com/page`. When creating internal links between your pages, you want to avoid linking to a page that will respond with a redirect and link directly to the correct location.
 {% endAside %}
 
-### Caching HTML responses
+## Caching HTML responses
 
 Caching HTML responses is difficult, since the response includes links to other critical resources such as CSS, JavaScript, and images. These resources may include [a unique fingerprint](https://bundlers.tooling.report/hashing/) which changes based on a file's contents. This means that your cached HTML document may become stale following a deployment, as it would contain links to outdated resources. Nonetheless, a short cache lifetime—rather than no caching—can have benefits such as allowing a resource to be cached at a CDN—reducing the number of requests that are served from the origin server—and in the browser, allowing resources to be revalidated rather than downloaded again.
 
@@ -53,7 +53,7 @@ The `Last-Modified` header works similarly by including a response header with t
 
 {% Glitch 'learn-performance-caching' %}
 
-### Server Response Times
+## Server Response Times
 
 If the response is not cached, the server response time is highly dependent on your hosting provider and backend stack. A web page that serves a dynamically generated response—such as fetching data from a database, for example—may well have a higher TTFB than a static web page that can be served immediately without significant compute time on the backend. Serving a loading spinner and then fetching all data on the client side moves the effort from a more predictable server-side environment to a potentially unpredictable client-side one. Minimizing client-side effort usually results in improved user-centric metrics.
 
@@ -75,11 +75,11 @@ You may also want to review your hosting infrastructure and confirm that you hav
 You can compare the TTFB of popular hosting providers at [ismyhostfastyet.com](https://ismyhostfastyet.com/). The data is made up of real user experiences collected from the [Chrome User Experience Report (CrUX)](https://developer.chrome.com/docs/crux/) dataset.
 {% endAside %}
 
-### Compression
+## Compression
 
 Text-based responses such as HTML, JavaScript, CSS, and SVG should be compressed to reduce their transfer time over the network. The most widely used compression algorithms are gzip and Brotli. Brotli results in about a 15% to 20% improvement over gzip.
 
-### Content Delivery Networks (CDNs)
+## Content Delivery Networks (CDNs)
 
 A [Content Delivery Network (CDN)](/content-delivery-networks/) is a distributed network of servers that cache resources from your origin server, and in turn serves them from edge servers that are physically closer to your users. The physical proximity to your users reduces [round-trip time (RTT)](https://en.wikipedia.org/wiki/Round-trip_delay), while optimizations such as HTTP/2 or HTTP/3, caching, and compression allow the CDN to serve content more quickly than if it would be fetched from your origin server. Utilizing a CDN can significantly improve your TTFB.
 

@@ -1,5 +1,5 @@
 ---
-title: Optimizing images
+title: Images
 authors:
   - imkevdev
 description: TODO
@@ -16,11 +16,11 @@ Images are the [heaviest](https://almanac.httparchive.org/en/2022/page-weight#fi
 
 An image is added to a page using [the `<img>` or `<picture>` elements](/learn/html/images/), or the CSS `background-image` property.
 
-### Image size
+## Image size
 
-The first optimization when it comes to using image resources is to display the image at the correct size. In the simplest case, if an image is displayed in a 500 pixel by 500 pixel container, using a square 1000 pixel image means that the image is twice as large as needed.
+The first optimization when it comes to using image resources is to display the image at the correct size—in this case, the term _size_ refers to the _dimensions_ of an image. In the simplest case, if an image is displayed in a 500 pixel by 500 pixel container, using a square 1000 pixel image means that the image is twice as large as needed.
 
-However, choosing which image size to use is complicated. In 2010, when the iPhone 4 was released, the screen resolution (640×960) was double that of the iPhone 3 (320×480). However, the screen size remained roughly the same. Running everything at the higher resolution would have made text and images tiny (half their previous size). Instead, 1 pixel became 2 [device pixels](https://en.wikipedia.org/wiki/Device-independent_pixel). This is called the [device pixel ratio (DPR)](https://developer.mozilla.org/docs/Web/API/Window/devicePixelRatio). The iPhone 4 had a DPR of 2.
+However, choosing which image size to use is complicated. In 2010, when the iPhone 4 was released, the screen resolution (640x960) was double that of the iPhone 3 (320x480). However, the screen size remained roughly the same. Running everything at the higher resolution would have made text and images tiny (half their previous size). Instead, 1 pixel became 2 [device pixels](https://en.wikipedia.org/wiki/Device-independent_pixel). This is called the [device pixel ratio (DPR)](https://developer.mozilla.org/docs/Web/API/Window/devicePixelRatio). The iPhone 4 had a DPR of 2.
 
 Revisiting the earlier example, if the device has a DPR of 2 and the image is displayed in a 500 pixel by 500 pixel container, then a square 1000 pixel image (referred to as the [intrinsic size](https://developer.mozilla.org/docs/Glossary/Intrinsic_Size)) is now the optimal size. Similarly, if the device has a DPR of 3, then a square 1500 pixel image would be the optimal size.
 
@@ -28,7 +28,7 @@ Revisiting the earlier example, if the device has a DPR of 2 and the image is di
 In most cases, the [human eye may be unable to benefit from a DPR of 3](https://observablehq.com/@eeeps/visual-acuity-and-device-pixel-ratio) and you can probably use an image that is smaller than the optimal size without a noticeable decrease in image quality.
 {% endAside %} 
 
-#### `srcset`
+### `srcset`
 
 The `<img>` element supports the [`srcset`](https://developer.mozilla.org/docs/Web/HTML/Element/img#attr-srcset) attribute, which allows you to specify a list of possible image sources the browser may use. Each image source specified must include the image URL, and a width _or_ pixel density descriptor.
 
@@ -44,7 +44,7 @@ The `<img>` element supports the [`srcset`](https://developer.mozilla.org/docs/W
 
 The above example uses the pixel density descriptor to hint the browser to use `image-500.png` on devices with a DPR of 1, `image-1000.jpg` on devices with a DPR of 2 and `image-1500.jpg` on devices with a DPR of 3.
 
-#### `sizes`
+### `sizes`
 
 The above solution only works if you display the image at the same CSS pixel size on all viewports. In many cases, the container's size will change depending on the user's device.
 
@@ -63,13 +63,13 @@ The [`sizes` attribute](https://developer.mozilla.org/docs/Web/HTML/Element/img#
 
 In the example above, the browser is instructed that if the device's viewport width exceeds 768 pixels, the image is displayed at a width of 500 pixels. On smaller devices, the image is displayed at 100vw—or the full viewport width.
 
-The browser can then combine this information with the list of `srcset` image sources to find the optimal image. For example, if the user is on a mobile device with a screen width of 320 pixels with a DPR of 3, the image is displayed at  `320 CSS pixels × 3 DPR = 960 device pixels`. In this example, the closest sized image would be `image-1000.jpg` which has an intrinsic width of 1000 pixels.
+The browser can then combine this information with the list of `srcset` image sources to find the optimal image. For example, if the user is on a mobile device with a screen width of 320 pixels with a DPR of 3, the image is displayed at  `320 CSS pixels x 3 DPR = 960 device pixels`. In this example, the closest sized image would be `image-1000.jpg` which has an intrinsic width of 1000 pixels.
 
 {% Aside %}
 `srcset` width descriptors do not work without the `sizes` attribute. Similarly, if you omit the `srcset` width descriptors, the `sizes` attribute won't do anything.
 {% endAside %}
 
-### File formats
+## File formats
 
 Browsers support several different image file formats. Modern image formats like [WebP](/serve-images-webp/) and [AVIF](/compress-images-avif/) may provide better compression than PNG or JPEG, making your image file size smaller and therefore taking less time to download.
 
@@ -77,7 +77,7 @@ WebP is a [widely supported](https://caniuse.com/webp) format that works on all 
 
 AVIF is a newer image format that is also [widely supported](https://caniuse.com/avif). AVIF supports both lossy and lossless compression, and [tests](https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4) have shown greater than 50% savings when compared to JPEG in some cases. AVIF also supports Wide Color Gamut (WCG) and High Dynamic Range (HDR).
 
-### Compression
+## Compression
 
 There are two types of compression:
 
@@ -94,7 +94,7 @@ Lossless compression reduces the file size by compressing an image with no data 
 
 You can compress your images using [Squoosh](https://squoosh.app), [ImageOptim](https://imageoptim.com/), or an image optimization service. When compressing, there isn't a universal setting suitable for all cases. The recommended approach would be to experiment with different compression levels until you find a good compromise between image quality and file size.
 
-### The `<picture>` element
+## The `<picture>` element
 
 The `<picture>` element gives you greater flexibility in specifying multiple image candidates:
 
@@ -207,7 +207,7 @@ Alternatively, by adjusting the `srcset` and `media` attributes, you can avoid s
 
 In the example above, the width descriptors have been removed in favor of device pixel ratio descriptors. Images served on a mobile device are limited to `/image-500.jpg` or `/image-1000.jpg`, even on devices with a DPR of 3.
 
-### Managing complexity
+## Managing complexity
 
 When working with responsive images, you can find yourself with many different size variations and formats for each image. In the example above, variations for each size are used, but exclude AVIF and WebP. How many variants should you have? It depends.
 
@@ -215,7 +215,7 @@ While it may be tempting to have as many variations to deliver the best fit, eve
 
 Apart from this, the size of your HTML document grows with each variation. You could find yourself shipping multiple kilobytes of HTML for each image.
 
-#### `Accept` header
+### `Accept` header
 
 The [`Accept`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept) HTTP request header informs the server which content types the user's browser understands. This information can be used by your server to serve the optimal image format without adding extra bytes to your HTML responses.
 
@@ -237,7 +237,7 @@ This is not unlike behavior you would find on an [Image Content Delivery Network
 
 The key is to find a balance, generate a reasonable number of image candidates, and measure the impact on the user experience. Different images can give different results, and the optimizations applied to each image depend on its size within the page and the devices your users are using. For example, a full-width hero image may require more variants than thumbnail images on an e-commerce product listing page.
 
-### Lazy loading
+## Lazy loading
 
 It is possible to tell the browser to lazy-load images when they appear in the viewport using the [`loading`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/loading) attribute. A value of `lazy` tells the browser to not download the image until it is in (or near) the viewport. This saves bandwidth, allowing the browser to prioritize the resources it needs to render the critical content that is already in the viewport.
 
@@ -245,7 +245,7 @@ It is possible to tell the browser to lazy-load images when they appear in the v
 To learn more about lazy loading images, checkout [Deferring non-critical resources](Deferring%20non-critical%20resources.md)
 {% endAside %}
 
-### `decoding`
+## `decoding`
 
 The [`decoding`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decoding) attribute tells the browser how it should decode the image. A value of `async` tells the browser that the image can be decoded asynchronously, possibly improving the time to render other content. A value of `sync` tells the browser that the image should be presented at the same time as other content. The default value of `auto` allows the browser to decide what is best for the user.
 
@@ -253,6 +253,6 @@ The [`decoding`](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/dec
 The effect of the `decoding` attribute may only be notable on larger, high-resolution images which take a much longer time to decode.
 {% endAside %}
 
-### Image demos
+## Image demos
 
 {% Glitch 'learn-performance-images' %}
