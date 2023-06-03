@@ -2,14 +2,14 @@
 title: Images
 authors:
   - imkevdev
-description: TODO
+description: Images represent a large portion of the data transferred on many web pages today. In this module, you'll learn about how to optimize images, and serve them efficiently so that you minimize wasted bytes, regardless of the device used.
 date: 2023-09-01
 tags:
   - performance
 ---
 
 {% Aside 'important' %}
-The following is a general overview of image performance. For an in-depth treatment on the subject, check out the [Learn Images course](/learn/images/),
+The following is a general overview of image performance. For an in-depth treatment on the subject, check out the [Learn Images course](/learn/images/) for more information on things such as specific file formats and [high performance performance image workflows](/learn/images/automating/).
 {% endAside %}
 
 Images are the [heaviest](https://almanac.httparchive.org/en/2022/page-weight#fig-8) and [most prevalent](https://almanac.httparchive.org/en/2022/page-weight#fig-3) resource on the web. As a result, optimizing your images is expected to improve your page's performance. In most cases, optimizing your images means reducing the network time by sending fewer bytes.

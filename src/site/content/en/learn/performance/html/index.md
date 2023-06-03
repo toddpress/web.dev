@@ -2,7 +2,7 @@
 title: HTML
 authors:
   - imkevdev
-description: TODO
+description: Every website starts with a request for an HTML document, and how you structure your HTML's dependent resources such as CSS and JavaScript has a big role to play in how fast your website loads. In this module, you'll learn important concepts such as HTML caching, parser blocking, render blocking, and more.
 date: 2023-09-01
 tags:
   - performance

@@ -3,5 +3,6 @@
   - title: i18n.courses.loading_performance.title
   - url: /learn/performance/html
   - url: /learn/performance/the-head-element
+  - url: /learn/performance/resource-hints
   - url: /learn/performance/images
   - url: /learn/performance/video
