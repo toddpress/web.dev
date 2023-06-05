@@ -108,3 +108,5 @@ Modern browsers load resources in two phases. The first phase is reserved for cr
 ## Browser hints demos
 
 {% Glitch 'learn-performance-resource-hints' %}
+
+**TODO: ADD ASSESSMENT**

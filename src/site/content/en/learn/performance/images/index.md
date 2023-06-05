@@ -256,3 +256,5 @@ The effect of the `decoding` attribute may only be notable on larger, high-resol
 ## Image demos
 
 {% Glitch 'learn-performance-images' %}
+
+**TODO: ADD ASSESSMENT**

@@ -191,3 +191,5 @@ Similar to CSS, [minifying your JavaScript](https://developer.chrome.com/en/docs
 ### JavaScript demos
 
 {% Glitch 'learn-performance-javascript' %}
+
+**TODO: ADD ASSESSMENT**

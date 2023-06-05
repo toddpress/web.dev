@@ -86,3 +86,5 @@ A [Content Delivery Network (CDN)](/content-delivery-networks/) is a distributed
 {% Aside %}
 For an in-depth look at CDNs and their benefits, read the [CDN guide](/content-delivery-networks/).
 {% endAside %}
+
+**TODO: ADD ASSESSMENT**

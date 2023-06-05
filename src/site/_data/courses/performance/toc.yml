@@ -7,3 +7,6 @@
   - url: /learn/performance/images
   - url: /learn/performance/video
   - url: /learn/performance/fonts
+  - title: i18n.courses.web_workers.title
+  - url: /learn/performance/web-workers-overview
+  - url: /learn/performance/web-worker-demo

@@ -1,0 +1,33 @@
+setLeader: Test your knowledge of basic Web Worker functionality.
+height: unset
+tabLabel: question
+questions:
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: Does a Web Worker run on the main thread?
+    options:
+      - content: "True"
+        rationale: "Try again."
+      - content: "False"
+        rationale: "Correct!"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "3"
+    stem: How is a web worker started?
+    options:
+      - content: "By registering a `<script>` element with a `type` attribute value of `\"worker\"`"
+        rationale: "Try again."
+      - content: "Through a service worker already controlling the page."
+        rationale: "Try again."
+      - content: "By instantiating the `Worker` class which points to an external JavaScript file."
+        rationale: "Correct!"
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "2"
+    stem: Can a Web Worker access the DOM _directly_?
+    options:
+      - content: "True"
+        rationale: "Try again."
+      - content: "False"
+        rationale: "Correct!"

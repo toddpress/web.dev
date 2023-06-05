@@ -135,6 +135,11 @@ loading_performance:
     en: Loading performance
   description:
     en: "TODO"
+web_workers:
+  title:
+    en: Using Web Workers
+  description:
+    en: "Web workers are a powerful feature of the web platform that can help your applications stay responsive to user input by running tasks off the main thread. This small set of modules will explain how they work, and demonstrate how a Web Worker use case."
 
 example:
   title:
