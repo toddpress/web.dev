@@ -76,7 +76,7 @@ that you prefer getting an image from the camera.
 <input type="file" accept="image/*" capture="environment" />
 ```
 
-Adding the `capture` attribute without a value let's the browser decide which camera to use, while
+Adding the `capture` attribute without a value lets the browser decide which camera to use, while
 the `"user"` and `"environment"` values tell the browser to prefer the front and rear cameras,
 respectively.
 
